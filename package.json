@@ -6,6 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "mobile",
+    "ui",
+    "vue.js",
+    "less"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ittiam/am-view.git"
