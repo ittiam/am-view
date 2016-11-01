@@ -75,7 +75,7 @@
     },
     methods: {
       close() {
-        this.show = false;
+        this.visible = false;
         if (this.onClose) {
           this.onClose();
         }
