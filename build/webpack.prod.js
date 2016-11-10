@@ -1,13 +1,25 @@
+var exec = require('child_process').execSync;
 var webpack = require('webpack');
-var merge = require('webpack-merge');
-var dev = require('./dev');
 var path = require('path');
 var base = require('base');
+var pkg = require('../package');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
+
+var loaders = [
+  {
+    loader: 'css-loader',
+    options: {
+      modules: true
+    }
+  }, {
+    loader: 'postcss-loader'
+  }, {
+    loader: 'less-loader'
+  }
+];
 
 exec('rm -rf dist/');
-
-var pkg = require('../package');
 
 base.entry.vendor = Object.keys(pkg.dependencies);
 base.entry.publicPath = '/public/';
@@ -41,32 +53,14 @@ base.plugins.push([
   })
 ]);
 
-base.module.loaders.push([
-  {
-    test: /\.css$/,
-    loader: ExtractTextPlugin.extract({
-      loader: 'css-loader!postcss-loader',
-      fallbackLoader: 'style-loader'
-    })
-  },
+base.module.rules.push([
   {
     test: /\.less$/,
     loader: ExtractTextPlugin.extract({
-      loader: 'css-loader!postcss-loader!less-loader',
+      loader: loaders,
       fallbackLoader: 'style-loader'
     })
   }
 ]);
-
-// extract css in single-file components
-base.vue.loaders.css = ExtractTextPlugin.extract({
-  loader: 'css-loader',
-  fallbackLoader: 'vue-style-loader'
-});
-
-base.vue.loaders.less = ExtractTextPlugin.extract({
-  loader: 'css-loader!less-loader',
-  fallbackLoader: 'vue-style-loader'
-});
 
 module.exports = base;
