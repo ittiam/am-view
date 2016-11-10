@@ -1,11 +1,12 @@
 {
   "name": "am-view",
   "version": "0.0.1",
-  "description": "Mobile UI Based on Vue.js",
-  "main": "index.js",
+  "description": "Mobile UI based on Vue.js",
+  "author": "czh <ittiamc@gmail.com>",
+  "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
-    "build": "node build/build.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js --inline --hot --port 8200",
+    "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js --progress --hide-modules"
   },
   "keywords": [
     "mobile",
@@ -17,45 +18,39 @@
     "type": "git",
     "url": "git+https://github.com/ittiam/am-view.git"
   },
-  "author": "ittiam",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ittiam/am-view/issues"
   },
   "homepage": "https://github.com/ittiam/am-view#readme",
+  "dependencies": {
+    "vue": "^2.0.1"
+  },
   "devDependencies": {
-    "autoprefixer": "^6.5.0",
-    "babel-core": "^6.18.0",
+    "autoprefixer": "^6.5.2",
+    "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
-    "babel-plugin-transform-runtime": "^6.0.0",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-stage-2": "^6.18.0",
-    "connect-history-api-fallback": "^1.1.0",
-    "cross-spawn": "^4.0.2",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-2": "^6.13.0",
+    "cross-env": "^3.1.3",
     "css-loader": "^0.25.0",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "file-loader": "^0.9.0",
-    "glob": "^7.1.1",
-    "html-webpack-plugin": "^2.8.1",
-    "koa": "^1.2.0",
-    "koa-proxy": "^0.6.0",
-    "koa-static-server": "^1.0.0",
-    "koa-webpack-dev-middleware": "^1.2.1",
+    "html-webpack-plugin": "^2.24.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
-    "ora": "^0.3.0",
-    "postcss-loader": "^1.0.0",
-    "shelljs": "^0.7.4",
+    "postcss-loader": "^1.1.1",
+    "progress-bar-webpack-plugin": "^1.9.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "vue": "^2.0.1",
-    "vue-hot-reload-api": "^2.0.6",
-    "vue-html-loader": "^1.0.0",
-    "vue-loader": "^9.4.0",
-    "vue-style-loader": "^1.0.0",
-    "webpack": "^1.12.2",
-    "webpack-hot-middleware": "^2.12.2",
-    "webpack-merge": "^0.14.1",
-    "webpack-spritesmith": "^0.2.6"
+    "vue-loader": "^9.7.0",
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^2.1.0-beta.10",
+    "webpack-hot-middleware": "^2.13.2",
+    "webpack-merge": "^0.15.0"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
   }
 }
