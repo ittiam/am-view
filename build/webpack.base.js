@@ -2,23 +2,20 @@ var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var env = process.env.NODE_ENV;
+var minimize = (env === 'production');
+
 var autoprefixer = require('autoprefixer');
 var browserOptions = {
   browsers: [
-    'ie >= 8',
     'ie_mob >= 10',
     'ff >= 26',
     'chrome >= 30',
     'safari >= 6',
-    'opera >= 23',
-    'ios >= 5',
-    'android >= 2.3',
-    'bb >= 10'
+    'ios >= 6',
+    'android >= 2.3'
   ]
 };
-
-var env = process.env.NODE_ENV;
-var minimize = (env === 'production');
 
 module.exports = {
   // 定义应用入口
@@ -63,7 +60,7 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif)$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 4096,
           name: 'images/[name].[hash:8].[ext]'
         }
       }
@@ -71,10 +68,20 @@ module.exports = {
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
+      test: /\.less$/,
+      options: {
+        postcss: [
+          autoprefixer(browserOptions)
+        ]
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      test: /\.vue$/,
       vue: {
-        postcss: [autoprefixer(browserOptions)]
-      },
-      minimize: minimize
+        postcss: [
+          autoprefixer(browserOptions)
+        ]
+      }
     }),
     new HtmlWebpackPlugin({
       template: './index.html',

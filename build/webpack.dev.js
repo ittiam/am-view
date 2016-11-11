@@ -35,14 +35,27 @@ base.module.rules.push(
   },
   {
     test: /\.less$/,
-    use: ['style-loader',
+    use: [
+      'style-loader',
       {
         loader: 'css-loader',
         options: {
           sourceMap: true
         }
       },
-      { loader: 'postcss-loader' }, 'less-loader']
+      {
+        loader: 'postcss-loader',
+        options: {
+          sourceMap: true
+        }
+      },
+      {
+        loader: 'less-loader',
+        options: {
+          sourceMap: true
+        }
+      }
+    ]
   }
 );
 
