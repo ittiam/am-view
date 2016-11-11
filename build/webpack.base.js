@@ -2,10 +2,28 @@ var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var autoprefixer = require('autoprefixer');
+var browserOptions = {
+  browsers: [
+    'ie >= 8',
+    'ie_mob >= 10',
+    'ff >= 26',
+    'chrome >= 30',
+    'safari >= 6',
+    'opera >= 23',
+    'ios >= 5',
+    'android >= 2.3',
+    'bb >= 10'
+  ]
+};
+
+var env = process.env.NODE_ENV;
+var minimize = (env === 'production');
+
 module.exports = {
   // 定义应用入口
   entry: {
-    src: path.resolve(__dirname, '../src/main.js')
+    app: path.resolve(__dirname, '../src/main.js')
   },
   // 定义输出
   output: {
@@ -52,6 +70,12 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.LoaderOptionsPlugin({
+      vue: {
+        postcss: [autoprefixer(browserOptions)]
+      },
+      minimize: minimize
+    }),
     new HtmlWebpackPlugin({
       template: './index.html',
       filename: 'index.html',

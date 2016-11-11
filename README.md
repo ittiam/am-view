@@ -1,6 +1,6 @@
 # am-view
 
-> A Vue.js project
+> A vue2 and webpack2 project
 
 ## Build Setup
 

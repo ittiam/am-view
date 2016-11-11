@@ -12,7 +12,9 @@
     "mobile",
     "ui",
     "vue.js",
-    "less"
+    "less",
+    "vue2",
+    "webpack2"
   ],
   "repository": {
     "type": "git",
