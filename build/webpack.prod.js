@@ -6,18 +6,20 @@ var pkg = require('../package');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
-exec('rm -rf dist/');
-
-base.entry.vendor = Object.keys(pkg.dependencies);
+exec('rm -rf lib/');
 
 base.devtool = false;
 // base.devtool = 'source-map'
-base.output.filename = 'scripts/[name].[chunkhash:8].js';
-base.output.publicPath = '/static/';
+base.entry = './src/main.js';
+// 定义输出
+base.output = {
+  path: path.resolve(__dirname, '../lib'),
+  filename: 'index.js'
+};
 
 base.plugins.push(
   new ProgressBarPlugin(),
-  new ExtractTextPlugin('styles/[name].[contenthash:8].css'),
+  new ExtractTextPlugin('style.css'),
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
@@ -32,11 +34,6 @@ base.plugins.push(
     output: {
       comments: false
     }
-  }),
-  // extract vendor chunks
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    filename: 'scripts/vendor.[chunkhash:8].js'
   })
 );
 

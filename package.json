@@ -3,7 +3,12 @@
   "version": "0.0.1",
   "description": "Mobile UI based on Vue.js",
   "author": "czh <ittiamc@gmail.com>",
-  "private": true,
+  "main": "lib/index.js",
+  "style": "lib/style.css",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js --inline --hot --port 8200",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js --progress --hide-modules"

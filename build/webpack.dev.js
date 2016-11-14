@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var base = require('./webpack.base');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // 配置开发服务器
 base.devServer = {
@@ -10,6 +11,12 @@ base.devServer = {
   proxy: {}
 };
 
+// 定义应用入口
+base.entry = './examples/main.js';
+base.output = {
+  path: path.resolve(__dirname, '../dist'),
+  filename: 'example.js'
+};
 // base.devtool = 'cheap-module-eval-source-map';
 base.devtool = 'eval-source-map';
 
@@ -20,7 +27,12 @@ base.plugins.push(
   // webpack 热替换插件
   // new webpack.HotModuleReplacementPlugin(),
   // 允许错误不打断程序
-  new webpack.NoErrorsPlugin()
+  new webpack.NoErrorsPlugin(),
+  new HtmlWebpackPlugin({
+    template: './examples/index.html',
+    filename: 'index.html',
+    inject: true
+  })
 );
 
 base.module.rules.push(
@@ -39,21 +51,12 @@ base.module.rules.push(
       'style-loader',
       {
         loader: 'css-loader',
-        options: {
-          sourceMap: true
-        }
       },
       {
-        loader: 'postcss-loader',
-        options: {
-          sourceMap: true
-        }
+        loader: 'postcss-loader'
       },
       {
-        loader: 'less-loader',
-        options: {
-          sourceMap: true
-        }
+        loader: 'less-loader'
       }
     ]
   }

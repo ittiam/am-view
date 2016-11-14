@@ -1,6 +1,5 @@
 var webpack = require('webpack');
 var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var env = process.env.NODE_ENV;
 var minimize = (env === 'production');
@@ -18,15 +17,6 @@ var browserOptions = {
 };
 
 module.exports = {
-  // 定义应用入口
-  entry: {
-    app: path.resolve(__dirname, '../src/main.js')
-  },
-  // 定义输出
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: '[name].js'
-  },
   resolveLoader: {
     modules: ['node_modules']
   },
@@ -54,14 +44,14 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: 'fonts/[name].[hash:8].[ext]'
+          name: 'fonts/[name].[ext]'
         }
       }, {
         test: /\.(png|jpg|jpeg|gif)$/,
         loader: 'url-loader',
         options: {
           limit: 4096,
-          name: 'images/[name].[hash:8].[ext]'
+          name: 'images/[name].[ext]'
         }
       }
     ]
@@ -82,11 +72,6 @@ module.exports = {
           autoprefixer(browserOptions)
         ]
       }
-    }),
-    new HtmlWebpackPlugin({
-      template: './index.html',
-      filename: 'index.html',
-      inject: true
     })
   ]
 };
