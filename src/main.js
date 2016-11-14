@@ -9,10 +9,10 @@ import Modal from './plugins/modal';
 import "./styles/index.less";
 
 const install = function (Vue) {
-  Vue.components('Button', Button);
-  Vue.components('Card', Card);
-  Vue.components('Loading', Loading);
-  Vue.components('InfiniteLoading', InfiniteLoading);
+  Vue.component('Button', Button);
+  Vue.component('Card', Card);
+  Vue.component('Loading', Loading);
+  Vue.component('InfiniteLoading', InfiniteLoading);
 
   Vue.$toast = Vue.prototype.$toast = Toast;
   Vue.$modal = Vue.prototype.$modal = Modal;

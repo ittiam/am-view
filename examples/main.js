@@ -1,9 +1,13 @@
 import Vue from 'vue';
 import App from './App';
+import router from './router';
 import AmView from '../src/main';
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  render: h => h(App)
+Vue.use(AmView);
+
+const app = new Vue({
+  router,
+  ...App
 });
+
+app.$mount('#app');

@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/ittiam/am-view#readme",
   "dependencies": {
+    "gh-pages": "^0.11.0",
     "vue-infinite-loading": "^2.0.0-rc.3"
   },
   "devDependencies": {
@@ -52,6 +53,7 @@
     "url-loader": "^0.5.7",
     "vue": "^2.0.1",
     "vue-loader": "^9.7.0",
+    "vue-router": "^2.0.1",
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.10",
     "webpack-hot-middleware": "^2.13.2",
