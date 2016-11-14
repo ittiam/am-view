@@ -11,7 +11,9 @@
   ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js --inline --hot --port 8200",
-    "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js --progress --hide-modules",
+    "demo": "cross-env NODE_ENV=production webpack --config build/webpack.demo.js --progress --hide-modules",
+    "deploy": "npm run demo && gh-pages -d dist"
   },
   "keywords": [
     "mobile",
@@ -31,7 +33,6 @@
   },
   "homepage": "https://github.com/ittiam/am-view#readme",
   "dependencies": {
-    "gh-pages": "^0.11.0",
     "vue-infinite-loading": "^2.0.0-rc.3"
   },
   "devDependencies": {
@@ -44,6 +45,7 @@
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "file-loader": "^0.9.0",
+    "gh-pages": "^0.11.0",
     "html-webpack-plugin": "^2.24.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",

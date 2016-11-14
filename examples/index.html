@@ -7,6 +7,10 @@
   </head>
   <body>
     <div id="app"></div>
+    <% if (process.env.NODE_ENV === 'production') { %>
+    <script src="//cdn.bootcss.com/vue/2.0.5/vue.min.js"></script>
+    <script src="//cdn.bootcss.com/vue-router/2.0.1/vue-router.min.js"></script>
+    <% } %>
     <!-- built files will be auto injected -->
   </body>
 </html>
