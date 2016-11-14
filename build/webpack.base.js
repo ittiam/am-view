@@ -43,14 +43,14 @@ module.exports = {
         test: /\.(woff|svg|ttf|eot)$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 2048,
           name: 'fonts/[name].[ext]'
         }
       }, {
         test: /\.(png|jpg|jpeg|gif)$/,
         loader: 'url-loader',
         options: {
-          limit: 4096,
+          limit: 2048,
           name: 'images/[name].[ext]'
         }
       }

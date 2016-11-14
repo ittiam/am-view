@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 var base = require('./webpack.base');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -38,7 +39,7 @@ base.plugins.push(
 base.module.rules.push(
   {
     test: /\.vue$/,
-    loader: 'vue',
+    loader: 'vue-loader',
     options: {
       loaders: {
         less: 'vue-style-loader!css-loader?sourceMap!postcss-loader!less-loader'
