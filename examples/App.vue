@@ -1,12 +1,21 @@
 <template>
   <div id="app">
+    <div class="page-header">
+      <div class="header-inner">
+        <div class="header-title">
+          <h1>Am View</h1>
+        </div>
+      </div>
+    </div>
     <router-view></router-view>
   </div>
 </template>
 
 <style lang="less">
+@headerHeight: 44px;
+
 .view {
-  padding-top: 44px;
+  padding-top: @headerHeight;
 }
 
 .page-header {
@@ -14,7 +23,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 44px;
+  height: @headerHeight;
   z-index: 99;
   background-color: #3e98f0;
 
@@ -25,7 +34,7 @@
       font-size: 18px;
       color: #fff;
       width: 100%;
-      line-height: 44px;
+      line-height: @headerHeight;
       text-align: center;
       overflow: hidden;
       text-overflow: ellipsis;

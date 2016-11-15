@@ -33,7 +33,8 @@
   },
   "homepage": "https://github.com/ittiam/am-view#readme",
   "dependencies": {
-    "vue-infinite-loading": "^2.0.0-rc.3"
+    "vue-infinite-loading": "^2.0.0-rc.3",
+    "vue-swipe": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.2",

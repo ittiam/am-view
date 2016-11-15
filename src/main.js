@@ -1,5 +1,6 @@
 import Button from './components/Button';
 import Card from './components/Card';
+import Cell from './components/Cell';
 import Loading from './components/Loading';
 import InfiniteLoading from 'vue-infinite-loading';
 
@@ -11,6 +12,7 @@ import "./styles/index.less";
 const install = function (Vue) {
   Vue.component('Button', Button);
   Vue.component('Card', Card);
+  Vue.component('Cell', Cell);
   Vue.component('Loading', Loading);
   Vue.component('InfiniteLoading', InfiniteLoading);
 
