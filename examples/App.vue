@@ -14,17 +14,8 @@
 <style lang="less">
 @headerHeight: 44px;
 
-.view {
-  padding-top: @headerHeight;
-}
-
 .page-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: @headerHeight;
-  z-index: 99;
   background-color: #3e98f0;
 
   .header-title {

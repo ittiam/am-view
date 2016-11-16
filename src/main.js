@@ -12,7 +12,7 @@ import "./styles/index.less";
 const install = function (Vue) {
   Vue.component('Button', Button);
   Vue.component('Card', Card);
-  Vue.component('Cell', Cell);
+  Vue.component('Cell', Cell)
   Vue.component('Loading', Loading);
   Vue.component('InfiniteLoading', InfiniteLoading);
 

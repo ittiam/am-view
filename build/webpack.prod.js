@@ -17,6 +17,15 @@ base.output = {
   filename: 'index.js'
 };
 
+base.externals = {
+  vue: {
+    root: 'Vue',
+    commonjs: 'vue',
+    commonjs2: 'vue',
+    amd: 'vue'
+  }
+};
+
 base.plugins.push(
   new ProgressBarPlugin(),
   new ExtractTextPlugin('style.css'),
