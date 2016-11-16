@@ -53,8 +53,8 @@
 .@{cellPrefixCls} {
   position: relative;
   display: flex;
-  padding-left: @h-spacing-lg;
-  padding-right: @h-spacing-lg;
+  padding-left: @h-spacing-md;
+  padding-right: @h-spacing-md;
   min-height: @list-item-height;
   background-color: @fill-base;
   vertical-align: middle;
@@ -83,8 +83,14 @@
     flex: 1;
   }
 
+  .@{cellPrefixCls}-right {
+    color: @color-text-caption
+  }
+
   .icon-arrow-right {
+    font-size: 12px;
     color: @color-text-caption;
+    margin-left: 5px;
   }
 
   select {

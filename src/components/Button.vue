@@ -30,6 +30,7 @@
           return oneOf(value, ['button', 'submit', 'reset']);
         }
       },
+      inline: Boolean,
       icon: String,
       loading: Boolean,
       disabled: Boolean
@@ -42,6 +43,7 @@
             [`${prefixCls}-disabled`]: this.disabled,
             [`${prefixCls}-${this.type}`]: !!this.type,
             [`${prefixCls}-${this.size}`]: !!this.size,
+            [`${prefixCls}-inline`]: !!this.inline,
             [`${prefixCls}-loading`]: this.loading != null && this.loading
           }
         ]
