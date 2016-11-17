@@ -5,6 +5,7 @@
       <cell title="Cell" to="/cell"></cell>
       <cell title="Spinner" to="/spinner"></cell>
       <cell title="Indicator" to="/indicator"></cell>
+      <cell title="Toast" to="/toast"></cell>
     </div>
   </div>
 </template>

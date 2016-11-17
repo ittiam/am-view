@@ -1,10 +1,13 @@
 <template>
-  <transition name="toast-fade">
+  <transition name="toast">
     <div class="toast" v-show="visible">
-      <div class="toast-notice" :class="toastClass">
-        <i class="toast-text-icon" v-if="type !== 'info'"></i>
-        <div class="toast-text" v-if="text" v-html="text"></div>
+      <div class="toast-wrapper">
+        <div class="toast-notice" :class="toastClass">
+          <i class="toast-text-icon" v-if="type !== 'info'"></i>
+          <div class="toast-text" v-if="text" v-html="text"></div>
+        </div>
       </div>
+      <div class="toast-mask"></div>
     </div>
   </transition>
 </template>

@@ -1,11 +1,10 @@
 @toastPrefixCls: toast;
 
-
-.@{toastPrefixCls}-fade-enter, .@{toastPrefixCls}-fade-leave-active {
+.@{toastPrefixCls}-enter, .@{toastPrefixCls}-leave-active {
   opacity: 0;
 }
 
-.@{toastPrefixCls} {
+.@{toastPrefixCls}-wrapper {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -15,6 +14,9 @@
   align-items: center;
   text-align: center;
   z-index: @toastZIndex;
+}
+
+.@{toastPrefixCls} {
   transition: opacity .3s linear;
 
   &-text {
@@ -38,4 +40,14 @@
     font-size: @icon-size-lg;
     margin-bottom: @v-spacing-md;
   }
+}
+
+.@{toastPrefixCls}-mask {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: transparent;
 }
