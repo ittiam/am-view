@@ -7,8 +7,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 base.devServer = {
   historyApiFallback: true,
   hot: true,
-  progress: false,
-  colors: true,
+  //progress: false,
+  stats: { colors: true },
   proxy: {}
 };
 
