@@ -23,8 +23,8 @@
         showHead: true
       }
     },
-    compiled() {
-      this.showHead = this.$refs.innerHTML !== '';
+    mounted() {
+      this.showHead = this.$refs.head.innerHTML !== '';
     }
   };
 </script>

@@ -1,0 +1,62 @@
+.spinner-shape {
+  animation: lrl 4s infinite cubic-bezier(.64,.07,.35,1);
+}
+
+@keyframes lrl {
+  0% {
+    transform: rotate(0deg) translate(1px, 1px);
+    transform-origin: 6px 7px;
+    rx: 2px;
+    fill: #3E98F0;
+    width: 10px;
+    height: 10px;
+  }
+  16.66667% {
+    transform: rotate(180deg) translate(13px, 1px);
+    transform-origin: 18px 7px;
+    rx: 2px;
+    fill: #3E98F0;
+    width: 10px;
+    height: 10px;
+  }
+  33.33333% {
+    transform: rotate(360deg) translate(25px, 0px);
+    transform-origin: 32px 7px;
+    rx: 6px;
+    fill: #FA4D45;
+    width: 12px;
+    height: 12px;
+  }
+  50% {
+    transform: rotate(540deg) translate(39px, 1px);
+    transform-origin: 44px 7px;
+    rx: 2px;
+    fill: #3E98F0;
+    width: 10px;
+    height: 10px;
+  }
+  66.66667% {
+    transform: rotate(720deg) translate(25px, 0px);
+    transform-origin: 32px 7px;
+    rx: 6px;
+    fill: #FA4D45;
+    width: 12px;
+    height: 12px;
+  }
+  83.88888% {
+    transform: rotate(900deg) translate(13px, 1px);
+    transform-origin: 18px 7px;
+    rx: 2px;
+    fill: #3E98F0;
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    transform: rotate(1080deg) translate(1px, 1px);
+    transform-origin: 6px 7px;
+    rx: 2px;
+    fill: #3E98F0;
+    width: 10px;
+    height: 10px;
+  }
+}

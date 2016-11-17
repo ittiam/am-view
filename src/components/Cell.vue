@@ -42,7 +42,3 @@
     }
   }
 </script>
-
-<style lang="less">
-
-</style>

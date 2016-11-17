@@ -13,7 +13,8 @@ base.devtool = false;
 base.entry = './examples/main.js';
 base.output = {
   path: path.resolve(__dirname, '../dist'),
-  filename: 'scripts/example.js'
+  filename: 'scripts/example.js',
+  publicPath: '/am-view/'
 };
 
 base.externals = {

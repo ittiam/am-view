@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <div class="page-header">
+      <div class="header-left">
+        <a class="icon" @click="onBack">&#xe601;</a>
+      </div>
       <div class="header-inner">
         <div class="header-title">
           <h1>Am View</h1>
@@ -10,6 +13,16 @@
     <router-view></router-view>
   </div>
 </template>
+
+<script>
+  export default {
+    methods: {
+      onBack() {
+        history.back();
+      }
+    }
+  }
+</script>
 
 <style lang="less">
 @headerHeight: 44px;
@@ -21,6 +34,21 @@ body {
 .page-header {
   height: @headerHeight;
   background-color: #3e98f0;
+
+  .header-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: @headerHeight;
+
+    .icon {
+      padding: 10px;
+      color: #fff;
+      font-size: 20px;
+      height: @headerHeight;
+      line-height: @headerHeight;
+    }
+  }
 
   .header-title {
     margin: 0 80px;
