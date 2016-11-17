@@ -1,5 +1,10 @@
 @toastPrefixCls: toast;
 
+
+.@{toastPrefixCls}-fade-enter, .@{toastPrefixCls}-fade-leave-active {
+  opacity: 0;
+}
+
 .@{toastPrefixCls} {
   position: fixed;
   left: 50%;
@@ -10,6 +15,7 @@
   align-items: center;
   text-align: center;
   z-index: @toastZIndex;
+  transition: opacity .3s linear;
 
   &-text {
     min-width: 1.2rem;

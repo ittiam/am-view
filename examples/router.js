@@ -7,6 +7,7 @@ import Index from './components/Index';
 import Button from './components/Button';
 import Cell from './components/Cell';
 import Spinner from './components/Spinner';
+import Indicator from './components/Indicator';
 
 export default new Router({
   mode: 'hash',
@@ -14,6 +15,7 @@ export default new Router({
     { path: '/', component: Index },
     { path: '/button', component: Button },
     { path: '/cell', component: Cell },
-    { path: '/spinner', component: Spinner }
+    { path: '/spinner', component: Spinner },
+    { path: '/indicator', component: Indicator }
   ]
 });

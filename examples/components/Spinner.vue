@@ -10,6 +10,9 @@
         <cell title="shape">
           <spinner-shape slot="right"></spinner-shape>
         </cell>
+        <cell title="snake">
+          <spinner-snake slot="right" color="#3e98f0"></spinner-snake>
+        </cell>
       </div>
     </div>
   </div>

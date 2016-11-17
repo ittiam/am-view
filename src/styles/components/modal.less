@@ -2,7 +2,12 @@
 
 @import './dialog.less';
 
+.@{modalPrefixClass}-enter, .@{modalPrefixClass}-leave-active {
+  opacity: 0;
+}
+
 .@{modalPrefixClass} {
+
   .button-common() {
     text-align: center;
     text-decoration: none;

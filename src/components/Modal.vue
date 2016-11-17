@@ -120,22 +120,8 @@
     },
     watch: {
       visible(val) {
-        if (val) {
-          this.show = true;
-        } else {
-          this.show = false;
-        }
+        this.show = !!val;
       }
     }
   }
 </script>
-
-<style lang="less">
-  .modal-wrap {
-    transition: opacity .3s linear;
-  }
-
-  .modal-enter, .modal-leave-active {
-    opacity: 0;
-  }
-</style>

@@ -37,13 +37,3 @@
     }
   }
 </script>
-
-<style lang="less">
-  .toast {
-    transition: opacity .3s linear;
-  }
-
-  .toast-fade-enter, .toast-fade-leave-active {
-    opacity: 0;
-  }
-</style>
