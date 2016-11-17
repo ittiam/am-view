@@ -7,9 +7,9 @@
 
     <div class="demo-content">
       <am-button @click.native="openIndicator">显示 Indicator</am-button>
+      <div class="divide"></div>
+      <am-button @click.native="openTextIndicator">显示 带文字 Indicator</am-button>
     </div>
-
-    <indicator :show="show"></indicator>
   </div>
 </template>
 
@@ -17,15 +17,19 @@
   export default {
     data() {
       return {
-        show: false
+        show: false,
+        showText: false
       }
     },
     methods: {
+      openTextIndicator() {
+        this.$indicator.open('加载中...');
+      },
       openIndicator() {
-        this.show = true;
+        this.$indicator.open();
 
         setTimeout(() => {
-          this.show = false;
+          this.$indicator.close();
         }, 1000);
       }
     }

@@ -6,6 +6,7 @@
       <cell title="Spinner" to="/spinner"></cell>
       <cell title="Indicator" to="/indicator"></cell>
       <cell title="Toast" to="/toast"></cell>
+      <cell title="Infinite Scroll" to="/infinite-loading"></cell>
     </div>
   </div>
 </template>
