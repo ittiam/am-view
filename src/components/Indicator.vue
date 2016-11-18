@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import SpinnerSnake from './SpinnerSnake';
+  import Spinner from './Spinner';
 
   export default {
     data() {
@@ -20,7 +20,7 @@
       };
     },
     components: {
-      SpinnerSnake
+      Spinner
     },
     beforeMount() {
       if (this.show) {
