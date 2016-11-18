@@ -14,7 +14,8 @@ base.entry = './src/main.js';
 // 定义输出
 base.output = {
   path: path.resolve(__dirname, '../lib'),
-  filename: 'index.js'
+  filename: 'index.js',
+  libraryTarget: 'umd'
 };
 
 base.externals = {

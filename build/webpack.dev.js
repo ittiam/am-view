@@ -47,6 +47,18 @@ base.module.rules.push(
     }
   },
   {
+    test: /\.css$/,
+    use: [
+      'style-loader',
+      {
+        loader: 'css-loader',
+      },
+      {
+        loader: 'postcss-loader'
+      }
+    ]
+  },
+  {
     test: /\.less$/,
     use: [
       'style-loader',
