@@ -3,8 +3,7 @@ import Card from './components/Card';
 import Cell from './components/Cell';
 import InfiniteLoading from './components/InfiniteLoading';
 
-import SpinnerShape from './components/SpinnerShape';
-import SpinnerSnake from './components/SpinnerSnake';
+import Spinner from './components/Spinner';
 
 import Toast from './plugins/toast';
 import Modal from './plugins/modal';
@@ -16,8 +15,8 @@ const install = function (Vue) {
   Vue.component('AmButton', Button);
   Vue.component('Card', Card);
   Vue.component('Cell', Cell);
-  Vue.component('SpinnerShape', SpinnerShape);
-  Vue.component('SpinnerSnake', SpinnerSnake);
+  Vue.component('Spinner', Spinner);
+
   Vue.component('InfiniteLoading', InfiniteLoading);
 
   Vue.$toast = Vue.prototype.$toast = Toast;
@@ -35,7 +34,7 @@ module.exports = {
   Card,
   Toast,
   Modal,
-  InfiniteLoading,
-  SpinnerShape,
-  SpinnerSnake
+  Indicator,
+  Spinner,
+  InfiniteLoading
 };

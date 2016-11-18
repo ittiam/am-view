@@ -3,7 +3,7 @@
     <div v-show="isLoading">
       <slot name="spinner">
         <div class="infinite-loading">
-          <spinner-shape></spinner-shape>
+          <spinner :type="spinner"></spinner>
         </div>
       </slot>
     </div>
@@ -17,7 +17,7 @@
 </template>
 <script>
   // fork from https://github.com/PeachScript/vue-infinite-loading
-  import SpinnerShape from './SpinnerShape';
+  import Spinner from './Spinner';
   /**
    * get the first scroll parent of an element
    * @param  {DOM} elm    the element which find scorll parent
@@ -60,14 +60,18 @@
       };
     },
     components: {
-      SpinnerShape
+      Spinner
     },
     props: {
       distance: {
         type: Number,
         default: 100,
       },
-      onInfinite: Function
+      onInfinite: Function,
+      spinner: {
+        type: String,
+        default: 'shape'
+      }
     },
     mounted() {
       this.scrollParent = getScrollParent(this.$el);

@@ -8,10 +8,13 @@
     <div class="demo-content">
       <div class="list">
         <cell title="shape">
-          <spinner-shape slot="right"></spinner-shape>
+          <spinner type="shape" slot="right"></spinner-shape>
         </cell>
         <cell title="snake">
-          <spinner-snake slot="right" color="#3e98f0"></spinner-snake>
+          <spinner type="snake" slot="right" color="#3e98f0"></spinner-snake>
+        </cell>
+        <cell title="bounce">
+          <spinner type="bounce" slot="right" color="#3e98f0"></spinner-snake>
         </cell>
       </div>
     </div>

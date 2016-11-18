@@ -2,7 +2,7 @@
   <transition name="indicator">
     <div class="indicator" v-show="visible">
       <div class="indicator-wrapper" :style="{ 'padding': text ? '20px' : '15px' }">
-        <spinner-snake class="indicator-spin" :size="32"></spinner-snake>
+        <spinner class="indicator-spin" type="snake" :size="32"></spinner>
         <span class="indicator-text" v-show="text">{{ text }}</span>
       </div>
       <div class="indicator-mask" @touchmove.stop.prevent></div>

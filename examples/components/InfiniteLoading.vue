@@ -7,7 +7,14 @@
 
     <div class="demo-content">
       <p class="example-list-item" v-for="item in list" v-text="item"></p>
-      <infinite-loading :on-infinite="onInfinite" :distance="distance" v-if="list.length < 300" ref="infiniteLoading"></infinite-loading>
+      <infinite-loading
+        :on-infinite="onInfinite"
+        :distance="distance"
+         v-if="list.length < 300"
+         ref="infiniteLoading"
+         spinner="snake"
+        >
+        </infinite-loading>
     </div>
   </div>
 </template>
@@ -21,7 +28,7 @@
       }
     },
     beforeMount: function () {
-      for (var i = 0; i < 50; i++) {
+      for (var i = 0; i < 20; i++) {
         this.list.push(i + 1);
       }
     },
