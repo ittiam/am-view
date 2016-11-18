@@ -10,6 +10,7 @@ import Spinner from './components/Spinner';
 import Indicator from './components/Indicator';
 import Toast from './components/Toast';
 import InfiniteLoading from './components/InfiniteLoading';
+import Tabs from './components/Tabs';
 
 export default new Router({
   mode: 'hash',
@@ -20,6 +21,7 @@ export default new Router({
     { path: '/spinner', component: Spinner },
     { path: '/indicator', component: Indicator },
     { path: '/toast', component: Toast },
-    { path: '/infinite-loading', component: InfiniteLoading }
+    { path: '/infinite-loading', component: InfiniteLoading },
+    { path: '/tabs', component: Tabs }
   ]
 });

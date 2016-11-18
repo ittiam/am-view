@@ -1,0 +1,55 @@
+@tabsPrefixCls: toast;
+
+.@{toastPrefixCls} {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: @brand-primary;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.tab-link-highlight {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: @brand-primary;
+  transition: all .3s;
+  backface-visibility: hidden;
+}
+
+.mu-tab-link {
+  min-height: 48px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 14px;
+  background: none;
+  appearance: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  flex: 1;
+  color: inherit;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: normal;
+  align-items: center;
+  color: @brand-primary;
+  transition: all .45s ease-in-out;
+  cursor: pointer;
+}
+
+.tab-active {
+  color: @brand-primary;
+}
+
+.tab-text {
+  &.has-icon {
+    margin-top: 8px;
+  }
+}
