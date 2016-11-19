@@ -12,7 +12,7 @@
       type: String,
       size: {
         type: Number,
-        default: 12
+        default: 24
       },
       color: {
         type: String,

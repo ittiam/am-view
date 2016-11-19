@@ -1,6 +1,6 @@
 <template>
   <a class="cell" :class="{ 'cell-with-brief': !!brief }" @click="onClick">
-    <div class="cell-left">
+    <div class="cell-left" v-if="showLeft">
       <slot name="left"></slot>
     </div>
     <div class="cell-content">
@@ -14,7 +14,7 @@
         <slot></slot>
       </div>
     </div>
-    <div class="cell-right">
+    <div class="cell-right" v-if="showRight || !!extra">
       {{extra}}
       <slot name="right"></slot>
     </div>
@@ -38,6 +38,14 @@
       title: '',
       brief: '',
       extra: '',
+      showLeft: {
+        type: Boolean,
+        default: false
+      },
+      showRight: {
+        type: Boolean,
+        default: false
+      },
       isLink: Boolean,
       to: {
         type: [String, Object]

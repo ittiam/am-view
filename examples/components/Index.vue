@@ -10,6 +10,7 @@
       <cell title="Infinite Scroll" to="/infinite-loading"></cell>
       <cell title="Tabs" to="/tabs"></cell>
       <cell title="Swipe" to="/swipe"></cell>
+      <cell title="Textbox" to="/textbox"></cell>
       <cell title="Icon" to="/icon"></cell>
     </div>
   </div>

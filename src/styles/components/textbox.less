@@ -1,0 +1,80 @@
+@textboxPrefixClass: textbox;
+
+.@{textboxPrefixClass} {
+  display: flex;
+
+  &-icon-wrapper {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    flex-shrink: 0;
+    margin-right: .3rem;
+  }
+
+  &-content {
+    flex: 1;
+  }
+
+  &-label {
+    display: block;
+  }
+
+  &-label-text {
+    font-size: .7rem;
+    line-height: 1;
+    margin-bottom: .1rem;
+    transition: color .1s ease;
+  }
+
+  &-icon {
+    color: rgba(0, 0, 0, .54);
+  }
+
+  &-textarea {
+    overflow-x: hidden;
+    padding-bottom: @v-spacing-md;
+  }
+
+  &-input {
+    height: 1.6rem;
+  }
+
+  &-input, &-textarea {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0,0,0,.22);
+    transition: border .1s ease;
+  }
+}
+
+.@{textboxPrefixClass}-v {
+  .@{textboxPrefixClass}-icon-wrapper {
+    padding-top: 1rem;
+  }
+
+  .@{textboxPrefixClass}-input, .@{textboxPrefixClass}-textarea {
+
+  }
+}
+
+.@{textboxPrefixClass}-h {
+  align-items: center;
+
+  .@{textboxPrefixClass}-label {
+    display: flex;
+    align-items: center;
+  }
+
+  .@{textboxPrefixClass}-input, .@{textboxPrefixClass}-textarea {
+    flex: 1;
+  }
+
+  .@{textboxPrefixClass}-label-text {
+    width: 4rem;
+  }
+}

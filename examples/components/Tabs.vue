@@ -1,5 +1,5 @@
 <template>
-  <div class="view view-spinner">
+  <div class="view tabs">
     <div class="demo-name">
       标签页
       <p>Tabs</p>

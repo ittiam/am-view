@@ -5,6 +5,7 @@ import Icon from './components/Icon';
 import InfiniteLoading from './components/InfiniteLoading';
 import Tabs from './components/Tabs';
 import TabPanel from './components/TabPanel';
+import Textbox from './components/Textbox';
 import { Swipe, SwipeItem } from 'vue-swipe';
 
 import Spinner from './components/Spinner';
@@ -26,6 +27,7 @@ const install = function (Vue) {
   Vue.component('Icon', Icon);
   Vue.component('Tabs', Tabs);
   Vue.component('TabPanel', TabPanel);
+  Vue.component('Textbox', Textbox);
 
   Vue.component('InfiniteLoading', InfiniteLoading);
 
@@ -51,5 +53,6 @@ module.exports = {
   InfiniteLoading,
   Icon,
   Tabs,
-  TabPanel
+  TabPanel,
+  Textbox
 };

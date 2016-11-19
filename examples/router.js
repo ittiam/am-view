@@ -14,6 +14,7 @@ import Modal from './components/Modal';
 import InfiniteLoading from './components/InfiniteLoading';
 import Tabs from './components/Tabs';
 import Swipe from './components/Swipe';
+import Textbox from './components/Textbox';
 
 export default new Router({
   mode: 'hash',
@@ -28,6 +29,7 @@ export default new Router({
     { path: '/modal', component: Modal },
     { path: '/infinite-loading', component: InfiniteLoading },
     { path: '/tabs', component: Tabs },
-    { path: '/swipe', component: Swipe }
+    { path: '/swipe', component: Swipe },
+    { path: '/textbox', component: Textbox }
   ]
 });
