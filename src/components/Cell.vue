@@ -1,17 +1,24 @@
 <template>
-  <a class="cell" @click="onClick">
+  <a class="cell" :class="{ 'cell-with-brief': !!brief }" @click="onClick">
     <div class="cell-left">
       <slot name="left"></slot>
     </div>
     <div class="cell-content">
-      {{title}}
-      <slot></slot>
+      <div class="cell-title">
+        <slot name="title">
+          {{title}}
+          <div class="cell-brief" v-text="brief" v-if="brief"></div>
+        </slot>
+      </div>
+      <div class="cell-value">
+        <slot></slot>
+      </div>
     </div>
     <div class="cell-right">
       {{extra}}
       <slot name="right"></slot>
     </div>
-    <i class="icon-arrow-right" v-if="isLink || !!to"></i>
+    <i class="icon-right" v-if="isLink || !!to"></i>
   </a>
 </template>
 
@@ -29,6 +36,7 @@
   export default {
     props: {
       title: '',
+      brief: '',
       extra: '',
       isLink: Boolean,
       to: {

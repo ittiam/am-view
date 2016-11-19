@@ -8,8 +8,8 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 exec('rm -rf lib/');
 
-base.devtool = false;
-// base.devtool = 'source-map'
+// base.devtool = false;
+base.devtool = 'source-map'
 base.entry = './src/main.js';
 // 定义输出
 base.output = {
@@ -59,6 +59,13 @@ base.module.rules.push(
         })
       }
     }
+  },
+  {
+    test: /\.css$/,
+    loader: ExtractTextPlugin.extract({
+      loader: [{ loader: 'css-loader' }, { loader: 'postcss-loader' }],
+      fallbackLoader: 'style-loader'
+    })
   },
   {
     test: /\.less$/,

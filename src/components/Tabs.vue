@@ -1,56 +1,125 @@
 <template>
-  <div class="tabs">
-    <slot></slot>
-    <span class="mu-tab-link-highlight" :style="tabLightStyle"></span>
+  <div class="tabs" :class="styleClasses">
+    <div class="tabs-header">
+      <ul class="tabs-header-items" ref="tabs-container">
+        <li class="tab-header-item"
+          :class="['type-' + type, { 'active': activeTab === tab.id, 'disabled': tab.disabled }]"
+          @click="select(tab, $event)"
+          v-for="(tab, index) in headers"
+        >
+          <div class="tab-header-item-icon" v-if="type === 'icon' || type === 'icon-and-text'">
+            <icon :icon="tab.icon"></icon>
+          </div>
+          <div class="tab-header-item-text" v-text="tab.header" v-if="type === 'text' || type === 'icon-and-text'"></div>
+        </li>
+      </ul>
+      <div
+        class="tabs-active-tab-indicator" :class="[indicatorColor]"
+        :style="{ 'left': indicatorLeft, 'right': indicatorRight }"
+      ></div>
+    </div>
+    <div class="tabs-body">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script>
+  import UUID from '../utils/uuid';
+  import { oneOf } from '../utils/assist';
+
+  import Icon from './Icon';
+
   export default {
-    props: {
-      value: {}
+    components: {
+      Icon
     },
-    data () {
+    props: {
+      type: {
+        type: String,
+        validator(value) {
+          return oneOf(value, ['text', 'icon', 'icon-and-text']);
+        },
+        default: 'text'
+      },
+      indicatorColor: {
+        type: String,
+        default: '#3e98f0'
+      },
+      fullwidth: {
+        type: Boolean,
+        default: false
+      },
+      activeName: String
+    },
+    data() {
       return {
-        tabLightStyle: {
-          width: '100%',
-          transform: 'translate3d(0, 0, 0)'
+        activeTab: null,
+        activeTabElement: null,
+        headers: []
+      }
+    },
+    mounted() {
+      // Setup default ids
+      for (let i = 0; i < this.$children.length; i++) {
+        var tab = this.$children[i];
+        this.$children[i].id = tab.id || UUID.short('ui-tab-');
+
+        this.headers.push({
+          id: tab.id,
+          header: tab.header,
+          icon: tab.icon,
+          disabled: tab.disabled
+        });
+      }
+
+      this.activeTab = this.activeName || this.$children[0].id;
+
+      this.$nextTick(() => {
+        if (this.$refs['tabs-container']) {
+          this.activeTabElement = this.$refs['tabs-container'].querySelector('.active');
+        }
+      });
+    },
+    computed: {
+      styleClasses() {
+        let classes = ['tabs-type-' + this.type];
+
+        if (this.fullwidth) {
+          classes.push('fullwidth');
+        }
+        return classes;
+      },
+      indicatorLeft() {
+        if (this.activeTabElement) {
+          return this.activeTabElement.offsetLeft + 'px';
+        }
+
+        return 0;
+      },
+      indicatorRight() {
+        if (this.activeTabElement) {
+          let left = this.activeTabElement.offsetLeft;
+          let width = this.activeTabElement.offsetWidth;
+
+          let tabContainerWidth = this.$refs['tabs-container'].offsetWidth;
+
+          return (tabContainerWidth - (left + width)) + 'px';
         }
       }
     },
     methods: {
-      handleTabClick (value, tab) {
-        if (this.value !== value) {
-          this.$emit('change', value);
+      select(tab, e) {
+        let newTabElement = e.currentTarget ? e.currentTarget : e;
+
+        if (tab.disabled || this.activeTabElement === newTabElement) {
+          return;
         }
-      },
-      getActiveIndex () {
-        if (!this.$children || this.$children.length === 0) return -1
-        let activeIndex = -1;
-        this.$children.forEach((tab, i) => {
-          if (tab.value === this.value) {
-            activeIndex = i;
-            return false;
-          }
-        })
-        return activeIndex;
-      },
-      setTabLightStyle () {
-        let x = this.getActiveIndex() * 100;
-        let len = this.$children.length;
-        this.tabLightStyle = {
-          width: len > 0 ? (100 / len).toFixed(4) + '%' : '100%',
-          transform: 'translate3d(' + x + '%, 0, 0)'
-        }
-      }
-    },
-    mounted () {
-      this.setTabLightStyle();
-    },
-    watch: {
-      value (val, oldVal) {
-        if (val === oldVal) return;
-        this.setTabLightStyle();
+
+        this.activeTabElement = newTabElement;
+        this.activeTab  = tab.id;
+
+        this.$emit('tab-changed', tab.id);
       }
     }
   }

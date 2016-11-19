@@ -12,6 +12,9 @@
           </div>
           <div class="modal-body" v-if="message" v-html="message"></div>
           <div class="modal-footer">
+            <div class="modal-button-group-v" v-if="footer.length">
+              <a class="modal-button" @click="onPress(button)" v-for="button in footer">{{button.text}}</a>
+            </div>
             <div class="modal-button-group-h">
               <a class="modal-button" v-if="cancelText" @click="cancel">{{cancelText}}</a>
               <a class="modal-button" v-if="confirmText" @click="confirm">{{confirmText}}</a>
@@ -52,7 +55,7 @@
       },
       maskClosable: {
         type: Boolean,
-        default: true
+        default: false
       },
       transparent: {
         type: Boolean,
@@ -62,6 +65,7 @@
     },
     data() {
       return {
+        footer: [],
         show: false,
         onClose: null,
         onConfirm: null,
@@ -95,6 +99,12 @@
         this.close();
         if (this.onConfirm) {
           this.onCancel();
+        }
+      },
+      onPress(button) {
+        this.close();
+        if (button.onpress) {
+          button.onpress.call(this);
         }
       }
     },

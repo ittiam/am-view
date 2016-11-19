@@ -1,5 +1,5 @@
 <template>
-  <div class="view view-spinner">
+  <div class="view view-infinite-loading">
     <div class="demo-name">
       无限加载
       <p>Infinite Scroll</p>
@@ -12,7 +12,7 @@
         :distance="distance"
          v-if="list.length < 300"
          ref="infiniteLoading"
-         spinner="snake"
+         spinner="bounce"
         >
         </infinite-loading>
     </div>

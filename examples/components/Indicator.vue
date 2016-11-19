@@ -1,5 +1,5 @@
 <template>
-  <div class="view view-spinner">
+  <div class="view view-indicator">
     <div class="demo-name">
       加载
       <p>Indicator</p>

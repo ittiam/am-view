@@ -1,5 +1,5 @@
 <template>
-  <div class="view view-spinner">
+  <div class="view view-toast">
     <div class="demo-name">
       轻提示
       <p>Toast</p>

@@ -16,6 +16,7 @@ var defaults = {
   confirmText: '确定',
   cancelText: '',
   closable: false,
+  maskClosable: false,
   onClose: function() {},
   onCancel: function() {},
   onConfirm: function() {}
@@ -38,6 +39,7 @@ var Modal = function(options) {
 
   function close() {
     setTimeout(function() {
+      $vm.footer = [];
       div.parentNode.removeChild(div);
     }, 300);
   }

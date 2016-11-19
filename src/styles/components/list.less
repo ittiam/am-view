@@ -73,21 +73,33 @@
     right: 0;
     height: 1px;
     background: @border-color-base;
-    left: @h-spacing-lg;
+    left: @h-spacing-md;
     transform: scaleY(0.5);
     transform-origin: 0, 0;
     z-index: 1;
+  }
+
+  &.@{cellPrefixCls}-with-brief {
+    padding-top: @h-spacing-md;
+    padding-bottom: @h-spacing-md;
   }
 
   .@{cellPrefixCls}-content {
     flex: 1;
   }
 
+  .@{cellPrefixCls}-brief {
+    color: @color-text-caption;
+    font-size: .6rem;
+    line-height: 1.2;
+    margin-top: .2rem;
+  }
+
   .@{cellPrefixCls}-right {
     color: @color-text-caption
   }
 
-  .icon-arrow-right {
+  .icon-right {
     font-size: 12px;
     color: @color-text-caption;
     margin-left: 5px;

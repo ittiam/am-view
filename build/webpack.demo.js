@@ -61,6 +61,13 @@ base.module.rules.push(
     }
   },
   {
+    test: /\.css$/,
+    loader: ExtractTextPlugin.extract({
+      loader: [{ loader: 'css-loader' }, { loader: 'postcss-loader' }],
+      fallbackLoader: 'style-loader'
+    })
+  },
+  {
     test: /\.less$/,
     loader: ExtractTextPlugin.extract({
       loader: [{ loader: 'css-loader' }, { loader: 'postcss-loader' }, {loader: 'less-loader'}],
