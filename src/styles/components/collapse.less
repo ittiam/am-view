@@ -1,0 +1,63 @@
+
+.collapse {
+  width: 100%;
+  margin-bottom: @v-spacing-md;
+
+  &-header {
+    position: relative;
+
+    margin: 0;
+    width: 100%;
+    border: none;
+    line-height: 1;
+    text-align: left;
+
+    display: flex;
+    min-height: 45px;
+    padding: .4rem .8rem;
+    align-items: center;
+
+    cursor: pointer;
+
+    .icon {
+      cursor: pointer;
+    }
+
+    &.disabled {
+      opacity: .6;
+      cursor: default;
+
+      .icon {
+        cursor: default;
+      }
+    }
+  }
+
+  &-header-content {
+
+  }
+
+  &-header-icon {
+    margin-left: auto;
+    margin-right: -4px;
+  }
+
+  &-body-wrapper {
+    overflow: hidden;
+    height: initial;
+
+    transition: height .2s ease;
+  }
+
+  &-body {
+    width: 100%;
+    padding: .8rem;
+    display: block;
+  }
+}
+
+.collapse-enter,
+.collapse-leave-active {
+  height: 0 !important;
+}
+

@@ -18,9 +18,13 @@
       <icon :size="36" type="nav"></icon>
       <icon :size="36" type="tip"></icon>
       <icon :size="36" type="discuss"></icon>
-      <icon :size="36" type="like"></icon>
+      <icon :size="36" type="heart"></icon>
       <icon :size="36" type="praise"></icon>
       <icon :size="36" type="clean"></icon>
+      <icon :size="36" type="persion"></icon>
+      <icon :size="36" type="phone"></icon>
+      <icon :size="36" type="face"></icon>
+      <icon :size="36" type="mail"></icon>
     </div>
   </div>
 </template>

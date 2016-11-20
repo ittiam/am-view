@@ -1,6 +1,7 @@
 import Button from './components/Button';
 import Card from './components/Card';
 import Cell from './components/Cell';
+import Collapse from './components/Collapse';
 import Icon from './components/Icon';
 import InfiniteLoading from './components/InfiniteLoading';
 import Tabs from './components/Tabs';
@@ -21,6 +22,7 @@ const install = function (Vue) {
   Vue.component('AmButton', Button);
   Vue.component('Card', Card);
   Vue.component('Cell', Cell);
+  Vue.component('Collapse', Collapse);
   Vue.component('Swipe', Swipe);
   Vue.component('SwipeItem', SwipeItem);
   Vue.component('Spinner', Spinner);
@@ -44,6 +46,7 @@ module.exports = {
   install,
   Button,
   Card,
+  Collapse,
   Swipe,
   SwipeItem,
   Toast,

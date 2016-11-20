@@ -1,6 +1,6 @@
 <template>
   <div class="textbox"
-    :class="['textbox-' + align, { 'disabled': disabled, 'active': active }]"
+    :class="{ 'disabled': disabled, 'active': active, 'has-label': !!label, 'vertical': vertical, 'horizontal': !vertical }"
   >
     <div class="textbox-icon-wrapper" v-if="!!icon">
       <icon :type="icon" class="textbox-icon"></icon>
@@ -17,6 +17,8 @@
           :disabled="disabled"
           :readonly="readonly"
           v-model="currentValue"
+          @focus="focussed"
+          @blur="blurred"
         ></textarea>
         <input
           v-else
@@ -26,6 +28,8 @@
           :disabled="disabled"
           :readonly="readonly"
           @input="handleInput"
+          @focus="focussed"
+          @blur="blurred"
         >
       </label>
 
@@ -55,9 +59,9 @@
         type: Number,
         default: 2
       },
-      align: {
-        type: String,
-        default: 'h' // v, or h
+      vertical: {
+        type: Boolean,
+        default: true // v, or h
       },
       disabled: Boolean,
       readonly: Boolean,
@@ -73,6 +77,12 @@
     methods: {
       handleInput(evt) {
         this.currentValue = evt.target.value;
+      },
+      focussed() {
+        this.active = true;
+      },
+      blurred() {
+        this.active = false;
       }
     },
     computed: {

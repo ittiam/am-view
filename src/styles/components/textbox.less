@@ -50,31 +50,41 @@
     border-bottom-color: rgba(0,0,0,.22);
     transition: border .1s ease;
   }
-}
 
-.@{textboxPrefixClass}-v {
-  .@{textboxPrefixClass}-icon-wrapper {
-    padding-top: 1rem;
+  &.active:not(.disabled) {
+    .@{textboxPrefixClass}-input,
+    .@{textboxPrefixClass}-textarea {
+      border-bottom-color: @brand-primary;
+    }
+
+    .@{textboxPrefixClass}-label-text,
+    .@{textboxPrefixClass}-icon {
+        color: @brand-primary;
+    }
   }
 
-  .@{textboxPrefixClass}-input, .@{textboxPrefixClass}-textarea {
-
+  &.vertical {
+    &.has-label {
+      .@{textboxPrefixClass}-icon-wrapper {
+        padding-top: 1rem;
+      }
+    }
   }
-}
 
-.@{textboxPrefixClass}-h {
-  align-items: center;
-
-  .@{textboxPrefixClass}-label {
-    display: flex;
+  &.horizontal {
     align-items: center;
-  }
 
-  .@{textboxPrefixClass}-input, .@{textboxPrefixClass}-textarea {
-    flex: 1;
-  }
+    .@{textboxPrefixClass}-label {
+      display: flex;
+      align-items: center;
+    }
 
-  .@{textboxPrefixClass}-label-text {
-    width: 4rem;
+    .@{textboxPrefixClass}-input, .@{textboxPrefixClass}-textarea {
+      flex: 1;
+    }
+
+    .@{textboxPrefixClass}-label-text {
+      width: 4rem;
+    }
   }
 }

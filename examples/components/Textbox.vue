@@ -6,9 +6,25 @@
     </div>
 
     <div class="demo-content">
-      <textbox type="text" label="Name" icon="persion" align="v" placeholder="Enter your name"></textbox>
+      <h2>垂直</h2>
       <div class="divide"></div>
-      <textbox type="textarea" label="Short bio" icon="face" align="v" placeholder="Introduce yourself in a few words"></textbox>
+      <textbox type="text" label="Name" icon="persion" placeholder="Enter your name"></textbox>
+      <div class="divide"></div>
+      <textbox type="textarea" label="Short bio" icon="face" placeholder="Introduce yourself in a few words"></textbox>
+
+      <h2>水平</h2>
+      <textbox type="text" label="Name" :vertical="false" placeholder="Enter your name"></textbox>
+      <div class="divide"></div>
+      <textbox type="textarea" label="Short bio" :vertical="false" :rows="3" placeholder="Introduce yourself in a few words"></textbox>
     </div>
   </div>
 </template>
+
+<style lang="less">
+  .demo-content {
+    h2 {
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+</style>

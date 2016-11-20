@@ -9,6 +9,7 @@ import Cell from './components/Cell';
 import Spinner from './components/Spinner';
 import Indicator from './components/Indicator';
 import Icon from './components/Icon';
+import Collapse from './components/Collapse';
 import Toast from './components/Toast';
 import Modal from './components/Modal';
 import InfiniteLoading from './components/InfiniteLoading';
@@ -22,6 +23,7 @@ export default new Router({
     { path: '/', component: Index },
     { path: '/button', component: Button },
     { path: '/cell', component: Cell },
+    { path: '/collapse', component: Collapse },
     { path: '/spinner', component: Spinner },
     { path: '/icon', component: Icon },
     { path: '/indicator', component: Indicator },
