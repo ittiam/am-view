@@ -63,16 +63,20 @@
     }
   }
 
-  &.vertical {
-    &.has-label {
-      .@{textboxPrefixClass}-icon-wrapper {
-        padding-top: 1rem;
-      }
+  &.has-label {
+    .@{textboxPrefixClass}-icon-wrapper {
+      padding-top: 1rem;
     }
   }
 
-  &.horizontal {
+  &.vertical {
     align-items: center;
+
+    &.has-label {
+      .@{textboxPrefixClass}-icon-wrapper {
+        padding-top: 0;
+      }
+    }
 
     .@{textboxPrefixClass}-label {
       display: flex;

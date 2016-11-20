@@ -1,6 +1,6 @@
 <template>
   <div class="textbox"
-    :class="{ 'disabled': disabled, 'active': active, 'has-label': !!label, 'vertical': vertical, 'horizontal': !vertical }"
+    :class="{ 'disabled': disabled, 'active': active, 'has-label': !!label, 'vertical': vertical }"
   >
     <div class="textbox-icon-wrapper" v-if="!!icon">
       <icon :type="icon" class="textbox-icon"></icon>
@@ -61,7 +61,7 @@
       },
       vertical: {
         type: Boolean,
-        default: true // v, or h
+        default: false
       },
       disabled: Boolean,
       readonly: Boolean,
