@@ -34,6 +34,7 @@
     components: {
       Icon
     },
+
     props: {
       type: {
         type: String,
@@ -52,13 +53,16 @@
       },
       activeName: String
     },
+
     data() {
       return {
+        index: -1,
         activeTab: null,
         activeTabElement: null,
         headers: []
       }
     },
+
     mounted() {
       // Setup default ids
       for (let i = 0; i < this.$children.length; i++) {
@@ -81,6 +85,7 @@
         }
       });
     },
+
     computed: {
       styleClasses() {
         let classes = ['tabs-type-' + this.type];
@@ -90,17 +95,20 @@
         }
         return classes;
       },
+
       indicatorStyle() {
+        if (this.index < 0) return;
         var left = 0;
         if (this.activeTabElement) {
-          left = this.activeTabElement.offsetLeft + 'px';
+          left = `${this.index * (100 / this.$children.length)}%`
         }
 
-        var width = 100 / this.$children.length + '%';
+        var width = `${100 / this.$children.length}%`;
 
         return { 'left': left, 'width': width }
       }
     },
+
     methods: {
       select(tab, e) {
         let newTabElement = e.currentTarget ? e.currentTarget : e;
@@ -113,6 +121,19 @@
         this.activeTab  = tab.id;
 
         this.$emit('tab-changed', tab.id);
+      }
+    },
+
+    watch: {
+      activeTab(newVal) {
+        for (var i = 0; i < this.headers.length; i++) {
+          if (this.headers[i].id === newVal) {
+            this.index = i;
+            return;
+          }
+        }
+
+        return -1;
       }
     }
   }

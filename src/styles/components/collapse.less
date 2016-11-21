@@ -37,16 +37,23 @@
 
   }
 
+  &.expand {
+    .collapse-header-icon {
+      transform: rotate(90deg);
+    }
+  }
+
   &-header-icon {
     margin-left: auto;
     margin-right: -4px;
+    transition: transform .3s ease;
   }
 
   &-body-wrapper {
     overflow: hidden;
     height: initial;
 
-    transition: height .2s ease;
+    transition: height .3s ease;
   }
 
   &-body {

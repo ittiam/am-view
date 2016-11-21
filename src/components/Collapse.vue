@@ -1,5 +1,5 @@
 <template>
-  <div class="collapse">
+  <div class="collapse" :class="{ 'expand': isOpen }">
     <button
       class="collapse-header"
       @click="toggleMenu"
@@ -11,7 +11,7 @@
         </slot>
       </div>
 
-      <icon class="collapse-header-icon" :type="icon" v-if="!hideIcon"></icon>
+      <icon class="collapse-header-icon" :size="12" type="right" v-if="!hideIcon"></icon>
     </button>
 
     <transition
@@ -65,10 +65,6 @@
     },
 
     computed: {
-      icon() {
-        return this.isOpen ? 'up' : 'down';
-      },
-
       calculatedHeight() {
         if (this.height === 0) {
           return 'initial';
