@@ -6,7 +6,7 @@
     </div>
 
     <div class="demo-content">
-      <tabs type="text">
+      <tabs type="text" :fullwidth="true">
         <tab-panel header="Books">
           My books
           <a href="https://google.com" target="_blank" rel="noopener">Hey</a>

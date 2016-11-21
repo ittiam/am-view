@@ -15,7 +15,7 @@
       </ul>
       <div
         class="tabs-active-tab-indicator" :class="[indicatorColor]"
-        :style="{ 'left': indicatorLeft, 'right': indicatorRight }"
+        :style="indicatorStyle"
       ></div>
     </div>
     <div class="tabs-body">
@@ -90,22 +90,15 @@
         }
         return classes;
       },
-      indicatorLeft() {
+      indicatorStyle() {
+        var left = 0;
         if (this.activeTabElement) {
-          return this.activeTabElement.offsetLeft + 'px';
+          left = this.activeTabElement.offsetLeft + 'px';
         }
 
-        return 0;
-      },
-      indicatorRight() {
-        if (this.activeTabElement) {
-          let left = this.activeTabElement.offsetLeft;
-          let width = this.activeTabElement.offsetWidth;
+        var width = 100 / this.$children.length + '%';
 
-          let tabContainerWidth = this.$refs['tabs-container'].offsetWidth;
-
-          return (tabContainerWidth - (left + width)) + 'px';
-        }
+        return { 'left': left, 'width': width }
       }
     },
     methods: {
