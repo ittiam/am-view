@@ -27,10 +27,6 @@
 <style lang="less">
 @headerHeight: 44px;
 
-body {
-  background: #f7f8f8;
-}
-
 .page-header {
   height: @headerHeight;
   background-color: #3e98f0;

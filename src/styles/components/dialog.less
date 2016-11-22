@@ -1,5 +1,5 @@
 .@{modalPrefixClass} {
-  position: relative;
+  transition: opacity .2s linear;
 
   &-mask {
     position: fixed;
@@ -9,33 +9,26 @@
     bottom: 0;
     height: 100%;
     background-color: @fill-overlay-inverse;
+
     &-hidden {
       display: none;
     }
   }
 
-  &-wrap {
+  &-wrapper {
     position: fixed;
-    overflow: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: @modalZIndex;
-    -webkit-overflow-scrolling: touch;
-    outline: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity .3s linear;
   }
 
-  &&-transparent {
+  &-transparent {
     .@{modalPrefixClass}-content {
       border-radius: @radius-md;
       height: auto;
       padding-top: @v-spacing-lg;
+
       .@{modalPrefixClass}-body {
         padding: 0 @h-spacing-lg @v-spacing-lg;
       }
@@ -75,6 +68,7 @@
     text-decoration: none;
     outline: none;
     z-index: 999;
+
     &-x:after {
       content: '×';
       font-weight: 100;

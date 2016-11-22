@@ -1,8 +1,8 @@
 <template>
   <transition name="modal">
-    <div class="modal-wrap" v-show="show">
+    <div class="modal" v-show="show">
       <div class="modal-mask" @click="mask"></div>
-      <div class="modal" :style="styles" :class="classes">
+      <div class="modal-wrapper" :style="styles" :class="classes">
         <div class="modal-content">
           <button aria-label="Close" class="modal-close" v-if="closable" @click="close">
             <span class="modal-close-x"></span>

@@ -30,7 +30,6 @@ const install = function (Vue) {
   Vue.component('Tabs', Tabs);
   Vue.component('TabPanel', TabPanel);
   Vue.component('Textbox', Textbox);
-
   Vue.component('InfiniteLoading', InfiniteLoading);
 
   Vue.$toast = Vue.prototype.$toast = Toast;

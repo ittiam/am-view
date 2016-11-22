@@ -1,7 +1,7 @@
 import Vue from 'vue';
+import AmView from '../src/main';
 import App from './App';
 import router from './router';
-import AmView from '../src/main';
 
 // import AmView from '../lib';
 // import '../lib/style.css';
