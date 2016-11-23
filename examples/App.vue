@@ -6,7 +6,7 @@
       </div>
       <div class="header-inner">
         <div class="header-title">
-          <h1>Am View</h1>
+          <h1><router-link to="/">Am View</router-link></h1>
         </div>
       </div>
     </div>
@@ -58,6 +58,10 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+
+      a {
+        color: #fff;
+      }
     }
   }
 }

@@ -7,7 +7,7 @@
           <button aria-label="Close" class="modal-close" v-if="closable" @click="close">
             <span class="modal-close-x"></span>
           </button>
-          <div class="modal-header" v-if="title">
+          <div class="modal-header" v-if="title" :class="{ 'without-body': !message }">
             <div class="modal-title">{{title}}</div>
           </div>
           <div class="modal-body" v-if="message" v-html="message"></div>

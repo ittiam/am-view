@@ -30,8 +30,9 @@
   }
 
   &-textarea {
-    overflow-x: hidden;
     padding-bottom: @v-spacing-md;
+    .overflow(auto);
+    overflow-x: hidden;
   }
 
   &-input {
@@ -43,12 +44,17 @@
     width: 100%;
     border: none;
     outline: none;
+    border-radius: 0;
     background: none;
 
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgba(0,0,0,.22);
     transition: border .1s ease;
+  }
+
+  &-textarea {
+
   }
 
   &.active:not(.disabled) {
