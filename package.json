@@ -3,8 +3,8 @@
   "version": "0.1.6",
   "description": "Mobile UI based on Vue.js",
   "author": "czh <ittiamc@gmail.com>",
-  "main": "lib/index.js",
-  "style": "lib/style.css",
+  "main": "lib/am-view.js",
+  "style": "lib/am-view.css",
   "files": [
     "lib",
     "src"

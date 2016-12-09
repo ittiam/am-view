@@ -8,13 +8,13 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 exec('rm -rf lib/');
 
-// base.devtool = false;
-base.devtool = 'source-map'
+base.devtool = false;
+// base.devtool = 'source-map'
 base.entry = './src/main.js';
 // 定义输出
 base.output = {
   path: path.resolve(__dirname, '../lib'),
-  filename: 'index.js',
+  filename: 'am-view.js',
   libraryTarget: 'umd'
 };
 
@@ -29,7 +29,7 @@ base.externals = {
 
 base.plugins.push(
   new ProgressBarPlugin(),
-  new ExtractTextPlugin('style.css'),
+  new ExtractTextPlugin('am-view.css'),
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('production')
   }),
