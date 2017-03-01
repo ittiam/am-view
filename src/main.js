@@ -15,7 +15,7 @@ import Toast from './plugins/toast';
 import Modal from './plugins/modal';
 import Indicator from './plugins/indicator';
 
-import './styles/index.less';
+// import './styles/index.less';
 import 'vue-swipe/dist/vue-swipe.css';
 
 const install = function (Vue) {
@@ -41,7 +41,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-module.exports = {
+export default {
   install,
   Button,
   Card,

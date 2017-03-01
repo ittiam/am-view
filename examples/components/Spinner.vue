@@ -8,13 +8,13 @@
     <div class="demo-content">
       <div class="list">
         <cell title="shape" :show-right="true">
-          <spinner type="shape" slot="right"></spinner-shape>
+          <spinner type="shape" slot="right"></spinner>
         </cell>
         <cell title="snake" :show-right="true">
-          <spinner type="snake" slot="right" color="#3e98f0"></spinner-snake>
+          <spinner type="snake" slot="right" color="#3e98f0"></spinner>
         </cell>
         <cell title="bounce" :show-right="true">
-          <spinner type="bounce" slot="right" color="#3e98f0"></spinner-snake>
+          <spinner type="bounce" slot="right" color="#3e98f0"></spinner>
         </cell>
       </div>
     </div>

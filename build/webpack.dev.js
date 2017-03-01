@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var base = require('./webpack.base');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var utils = require('./utils');
 
 // 配置开发服务器
 base.devServer = {
@@ -28,7 +29,7 @@ base.plugins.push(
   // webpack 热替换插件
   // new webpack.HotModuleReplacementPlugin(),
   // 允许错误不打断程序
-  new webpack.NoErrorsPlugin(),
+  new webpack.NoEmitOnErrorsPlugin(),
   new HtmlWebpackPlugin({
     template: './examples/index.html',
     filename: 'index.html',
@@ -36,44 +37,7 @@ base.plugins.push(
   })
 );
 
-base.module.rules.push(
-  {
-    test: /\.vue$/,
-    loader: 'vue-loader',
-    options: {
-      loaders: {
-        less: 'vue-style-loader!css-loader?sourceMap!postcss-loader!less-loader'
-      }
-    }
-  },
-  {
-    test: /\.css$/,
-    use: [
-      'style-loader',
-      {
-        loader: 'css-loader',
-      },
-      {
-        loader: 'postcss-loader'
-      }
-    ]
-  },
-  {
-    test: /\.less$/,
-    use: [
-      'style-loader',
-      {
-        loader: 'css-loader',
-      },
-      {
-        loader: 'postcss-loader'
-      },
-      {
-        loader: 'less-loader'
-      }
-    ]
-  }
-);
+base.module.rules = base.module.rules.concat(utils.styleLoaders({ sourceMap: false }));
 
 module.exports = base;
 
