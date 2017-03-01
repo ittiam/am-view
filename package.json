@@ -1,6 +1,6 @@
 {
   "name": "am-view",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Mobile UI based on Vue.js",
   "author": "czh <ittiamc@gmail.com>",
   "main": "lib/am-view.js",
