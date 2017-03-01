@@ -48,6 +48,6 @@ base.plugins.push(
   })
 );
 
-base.module.rules = base.module.rules.concat(utils.styleLoaders({ sourceMap: false }));
+base.module.rules = base.module.rules.concat(utils.styleLoaders({ sourceMap: false, extract: true }));
 
 module.exports = base;
