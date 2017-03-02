@@ -3,7 +3,7 @@
     <transition name="fade">
       <div class="modal-mask" @click="mask" v-show="show"></div>
     </transition>
-    <transition name="ease">
+    <transition name="ease-fade">
       <div class="modal-wrapper" :style="styles" :class="classes" v-show="show">
         <div class="modal-content">
           <button aria-label="Close" class="modal-close" v-if="closable" @click="close">
