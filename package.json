@@ -10,7 +10,7 @@
     "src"
   ],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js --inline --hot --port 8200",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js --inline --hot --port 8500",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js --progress --hide-modules",
     "demo": "cross-env NODE_ENV=production webpack --config build/webpack.demo.js --progress --hide-modules",
     "deploy": "npm run demo && gh-pages -d dist"
