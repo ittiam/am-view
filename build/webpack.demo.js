@@ -6,6 +6,7 @@ var pkg = require('../package');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var utils = require('./utils');
 
 exec('rm -rf dist/');
 
@@ -47,33 +48,6 @@ base.plugins.push(
   })
 );
 
-base.module.rules.push(
-  {
-    test: /\.vue$/,
-    loader: 'vue-loader',
-    options: {
-      loaders: {
-        less: ExtractTextPlugin.extract({
-          loader: 'css-loader!postcss-loader!less-loader',
-          fallbackLoader: 'vue-style-loader'
-        })
-      }
-    }
-  },
-  {
-    test: /\.css$/,
-    loader: ExtractTextPlugin.extract({
-      loader: [{ loader: 'css-loader' }, { loader: 'postcss-loader' }],
-      fallbackLoader: 'style-loader'
-    })
-  },
-  {
-    test: /\.less$/,
-    loader: ExtractTextPlugin.extract({
-      loader: [{ loader: 'css-loader' }, { loader: 'postcss-loader' }, {loader: 'less-loader'}],
-      fallbackLoader: 'style-loader'
-    })
-  }
-);
+base.module.rules = base.module.rules.concat(utils.styleLoaders({ sourceMap: false, extract: true }));
 
 module.exports = base;

@@ -1,8 +1,10 @@
 <template>
-  <transition name="modal">
-    <div class="modal" v-show="show">
-      <div class="modal-mask" @click="mask"></div>
-      <div class="modal-wrapper" :style="styles" :class="classes">
+  <div class="modal">
+    <transition name="fade">
+      <div class="modal-mask" @click="mask" v-show="show"></div>
+    </transition>
+    <transition name="ease">
+      <div class="modal-wrapper" :style="styles" :class="classes" v-show="show">
         <div class="modal-content">
           <button aria-label="Close" class="modal-close" v-if="closable" @click="close">
             <span class="modal-close-x"></span>
@@ -22,8 +24,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </template>
 
 <script>

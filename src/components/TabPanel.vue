@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-panel" :id="id" v-show="active">
+  <div class="tab-panel" :id="id" :style="styles">
     <slot></slot>
   </div>
 </template>
@@ -20,8 +20,11 @@
       }
     },
     computed: {
-      active() {
-        return this.$parent.activeTab === this.id;
+      styles() {
+
+        return {
+          'display': this.$parent.activeTab === this.id ? 'block' : 'none'
+        }
       }
     }
   }

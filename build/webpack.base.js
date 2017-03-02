@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var vueLoaderConfig = require('./vue-loader.conf');
 
 var env = process.env.NODE_ENV;
 var minimize = (env === 'production');
@@ -36,6 +37,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: vueLoaderConfig
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: [/node_modules/]
@@ -56,22 +62,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      test: /\.less$/,
-      options: {
-        postcss: [
-          autoprefixer(browserOptions)
-        ]
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      test: /\.vue$/,
-      vue: {
-        postcss: [
-          autoprefixer(browserOptions)
-        ]
-      }
-    })
-  ]
+  plugins: []
 };

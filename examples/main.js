@@ -4,7 +4,6 @@ import App from './App';
 import router from './router';
 
 // import AmView from '../lib';
-// import '../lib/style.css';
 
 Vue.use(AmView);
 
