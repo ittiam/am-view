@@ -13,7 +13,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.js --inline --hot --port 8500",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js --progress --hide-modules",
     "demo": "cross-env NODE_ENV=production webpack --config build/webpack.demo.js --progress --hide-modules",
-    "deploy": "npm run demo && gh-pages -d dist"
+    "gh": "npm run demo && gh-pages -d dist"
   },
   "keywords": [
     "mobile",
@@ -45,7 +45,7 @@
     "babel-preset-stage-2": "^6.13.0",
     "cross-env": "^3.1.3",
     "css-loader": "^0.26.2",
-    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "extract-text-webpack-plugin": "^2.0.0",
     "file-loader": "^0.10.1",
     "gh-pages": "^0.12.0",
     "html-webpack-plugin": "^2.24.1",
@@ -63,7 +63,7 @@
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1",
     "webpack-hot-middleware": "^2.13.2",
-    "webpack-merge": "^0.15.0"
+    "webpack-merge": "^3.0.0"
   },
   "engines": {
     "node": ">= 4.0.0",
