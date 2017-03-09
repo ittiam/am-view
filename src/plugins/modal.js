@@ -41,7 +41,7 @@ var Modal = function(options) {
     setTimeout(function() {
       $vm.footer = [];
       div.parentNode.removeChild(div);
-    }, 300);
+    }, 350);
   }
 
   var originClose = $vm.onClose || function() {};

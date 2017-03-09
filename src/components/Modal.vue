@@ -3,9 +3,9 @@
     <transition name="fade">
       <div class="modal-mask" @click="mask" v-if="show"></div>
     </transition>
-    <transition name="ease-fade">
-      <div class="modal-wrapper" :style="styles" :class="classes" v-if="show">
-        <div class="modal-content">
+    <div class="modal-wrapper" :style="styles" :class="classes">
+      <transition name="msgbox-fade">
+        <div class="modal-content" v-if="show">
           <button aria-label="Close" class="modal-close" v-if="closable" @click="close">
             <span class="modal-close-x"></span>
           </button>
@@ -23,8 +23,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </transition>
+      </transition>
+    </div>
   </div>
 </template>
 
