@@ -4,7 +4,7 @@
       <div class="modal-mask" @click="mask" v-if="show"></div>
     </transition>
     <div class="modal-wrapper" :style="styles" :class="classes">
-      <transition name="msgbox-fade">
+      <transition name="ease-fade">
         <div class="modal-content" v-if="show">
           <button aria-label="Close" class="modal-close" v-if="closable" @click="close">
             <span class="modal-close-x"></span>
